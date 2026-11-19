@@ -1,0 +1,157 @@
+/* ============================================================
+   style.css — 学术极简风个人主页
+   复刻参考站点（Kube 框架）的观感：白底、黑字、细分隔线、
+   居中窄栏、衬线标题 + 无衬线正文。
+   ============================================================ */
+
+:root {
+  --maxw: 880px;        /* 内容栏宽度，想要更窄改成 760px */
+  --text: #111111;
+  --muted: #6b6b6b;
+  --line: #e6e6e6;
+  --bg: #ffffff;
+  --card: #fafafa;
+  --link: #0b3d91;      /* 链接颜色，想要黑色改成 #111111 */
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 16px;
+  line-height: 1.78;
+}
+
+.container { max-width: var(--maxw); margin: 0 auto; padding: 0 22px; }
+
+h1, h2, h3, h4 {
+  font-family: "Playfair Display SC", Georgia, "Times New Roman", "Songti SC", serif;
+  font-weight: 700;
+  line-height: 1.32;
+  letter-spacing: .01em;
+}
+h1 { font-size: 2.05rem; margin: .2em 0; }
+h2 { font-size: 1.35rem; margin: 1.6em 0 .6em; }
+h3 { font-size: 1.1rem;  margin: 1.2em 0 .4em; }
+h4 { font-size: 1rem; }
+
+p { margin: 0 0 1.1em; }
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+hr { border: 0; border-top: 1px solid var(--line); margin: 26px 0; }
+
+ul { padding-left: 1.15em; }
+li { margin: .25em 0; }
+
+/* ---------------- 顶部导航 ---------------- */
+.main-nav {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(255, 255, 255, .95);
+  backdrop-filter: saturate(180%) blur(6px);
+  border-bottom: 1px solid var(--line);
+}
+.navbar {
+  display: flex; flex-wrap: wrap; align-items: center;
+  gap: 26px; list-style: none; margin: 0; padding: 0;
+}
+.navbar > li { position: relative; padding: 14px 0; }
+.navbar > li > h2 {
+  margin: 0; font-size: .95rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .06em;
+}
+.navbar > li > h2 > a { color: var(--text); }
+.navbar > li > h2 > a:hover { color: var(--link); text-decoration: none; }
+
+/* 悬停展开的下拉子菜单 */
+.dropdown {
+  display: none; position: absolute; left: -14px; top: 100%;
+  min-width: 232px; margin: 0; padding: 6px 0; list-style: none;
+  background: #fff; border: 1px solid var(--line); border-radius: 6px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, .09);
+}
+.navbar > li:hover .dropdown,
+.navbar > li:focus-within .dropdown { display: block; }
+.dropdown li h4 {
+  margin: 0; font-size: .85rem; font-weight: 400;
+  font-family: inherit; letter-spacing: 0;
+}
+.dropdown a { display: block; padding: 6px 16px; }
+.dropdown a:hover { background: #f4f4f4; text-decoration: none; }
+
+.logo { font-size: 1.05rem; }
+
+/* ---------------- 首屏：头像 + 打字机 ---------------- */
+.intro { padding: 34px 0 6px; }
+.intro-row { display: flex; gap: 26px; align-items: center; }
+.avatar { flex: 0 0 auto; }
+.avatar img {
+  width: 150px; height: 150px; object-fit: cover;
+  border-radius: 50%; border: 1px solid var(--line); display: block;
+}
+.intro-text { flex: 1 1 auto; min-width: 0; }
+.intro-text h1 { margin: 0; }
+.intro-text .typed { color: var(--link); }
+
+/* ---------------- 信息卡片 ---------------- */
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px 22px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, .05);
+}
+.card h4 { margin: 0 0 8px; font-size: 1.05rem; }
+.card ul { list-style: none; padding-left: 0; margin: 0; }
+.card li { margin: .45em 0; }
+.card i { display: inline-block; width: 1.25em; text-align: center; margin-right: .5em; }
+.card img.ico { height: 1.05em; width: auto; margin-right: .55em; vertical-align: -.12em; }
+
+/* ---------------- 图片横排 ---------------- */
+.gallery { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.gallery img {
+  height: 132px; width: auto;
+  border: 1px solid var(--line); border-radius: 4px;
+}
+
+/* ---------------- 公式墙 ---------------- */
+.mathwall { margin: 24px 0; }
+.mathwall mjx-container[display="true"] { margin: .55em 0 !important; }
+
+/* ---------------- 名言 ---------------- */
+blockquote {
+  margin: 26px 0; padding: 2px 0 2px 16px;
+  border-left: 3px solid var(--line);
+  color: var(--muted); font-size: .92em;
+}
+blockquote footer { font-size: .85em; margin-top: .5em; }
+
+/* ---------------- 按钮 ---------------- */
+button {
+  font-family: inherit; font-size: .85rem;
+  padding: 4px 12px; border: 1px solid var(--line); border-radius: 6px;
+  background: #fff; cursor: pointer; color: var(--text);
+}
+button:hover { background: #f2f2f2; }
+
+/* ---------------- 页脚 ---------------- */
+.site-footer {
+  border-top: 1px solid var(--line);
+  margin-top: 44px; padding: 22px 0 40px;
+  color: var(--muted); font-size: .85rem; text-align: center;
+}
+
+/* ---------------- 小屏适配 ---------------- */
+@media (max-width: 640px) {
+  .navbar { gap: 16px; }
+  .navbar > li > h2 { font-size: .82rem; }
+  .intro-row { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .intro-text h1 { font-size: 1.55rem; }
+  .gallery img { height: 96px; }
+  .dropdown { left: -8px; }
+}

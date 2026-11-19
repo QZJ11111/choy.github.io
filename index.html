@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name（你的名字）</title>
+  <meta name="description" content="homepage of Your Name" />
+  <meta name="author" content="Your Name" />
+  <link rel="shortcut icon" href="favicon.png" />
+
+  <!-- 字体：标题 Playfair Display SC，正文 Lato -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display+SC:wght@700&display=swap" rel="stylesheet" />
+
+  <!-- 图标库：Font Awesome（通用图标）+ Academicons（学术图标） -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+
+  <!-- 本站样式 -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- MathJax：让 $...$ 与 $$...$$ 渲染成公式 -->
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] },
+      options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'] }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+
+  <!-- ================= 顶部导航 ================= -->
+  <!-- ★1 导航项：想删哪个就删掉对应的 <li> -->
+  <div class="main-nav">
+    <div class="container">
+      <nav>
+        <ul class="navbar">
+          <li>
+            <h2><a href="index.html">Home</a></h2>
+            <ul class="dropdown">
+              <li><h4><a href="index.html">&#10687 English Homepage</a></h4></li>
+              <li><h4><a href="index.html">&#10687 中文主页</a></h4></li>
+            </ul>
+          </li>
+          <li>
+            <h2><a href="#">Research</a></h2>
+            <ul class="dropdown">
+              <li><h4><a href="#">&#10687 Research CV</a></h4></li>
+              <li><h4><a href="#">&#10687 Publication &amp; Preprint</a></h4></li>
+              <li><h4><a href="#">&#10687 Academic Activities</a></h4></li>
+            </ul>
+          </li>
+          <li><h2><a href="#">Lecture</a></h2></li>
+          <li><h2><a href="#">Miscellanea</a></h2></li>
+          <li><h2><a href="#">Blog</a></h2></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ================= 首屏：头像 + 打字机 ================= -->
+  <div class="intro">
+    <div class="container">
+      <div class="intro-row">
+
+        <!-- ★2 头像：把 src 换成你自己的照片即可（建议正方形，如 avatar.jpg） -->
+        <div class="avatar">
+          <img src="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=minimalist%20flat%20vector%20portrait%20of%20a%20young%20researcher%20wearing%20a%20sweater%2C%20plain%20light%20gray%20background%2C%20academic%20avatar%2C%20clean%20minimal%20style&image_size=square"
+               alt="Avatar" />
+        </div>
+
+        <!-- ★3 打字机文案在页面最下方 JS 里改 -->
+        <div class="intro-text">
+          <h1>I am interested in<br /><span class="typed" id="typed"></span></h1>
+        </div>
+
+      </div>
+
+      <hr />
+
+      <!-- ================= 信息卡片 ================= -->
+      <div class="card">
+        <h4>Your Name | 你的名字</h4>
+        <hr />
+        <ul>
+          <li>
+            <i class="ai ai-cv-square"></i>
+            Curriculum Vitae : <a href="#">CV</a>, <a href="#">Web version</a> of CV
+          </li>
+          <li>
+            <i class="fa fa-envelope"></i>
+            Email address: <a href="mailto:your.name@example.com">your.name@example.com</a>
+          </li>
+          <li>
+            <i class="fa fa-university"></i>
+            Current affiliation: Ph.D. student at <a href="#">Your Department</a>,
+            <a href="#">Your University</a>
+          </li>
+          <li>
+            <i class="ai ai-google-scholar-square"></i>
+            Google Scholar: <a href="#">Your Name</a>
+          </li>
+          <li>
+            <i class="ai ai-orcid"></i>
+            ORCID: <a href="#">0000-0000-0000-0000</a>
+          </li>
+          <li>
+            <i class="ai ai-arxiv"></i>
+            arXiv: <a href="#">link</a>
+          </li>
+          <li>
+            <i class="fa-brands fa-github"></i>
+            GitHub: <a href="#">your-username</a>
+          </li>
+          <li>
+            <i class="fa-brands fa-zhihu"></i>
+            知乎: <a href="#">你的知乎主页</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-link"></i>
+            其他: <a href="#">你想加的任意链接</a>
+          </li>
+        </ul>
+      </div>
+
+      <hr />
+
+      <!-- ================= 图片横排 ================= -->
+      <!-- ★4 换成自己收藏的动图/示意图（GIF 也支持） -->
+      <div class="gallery">
+        <img src="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=abstract%20mathematical%20topology%20illustration%20of%20a%20torus%20and%20knot%2C%20thin%20dark%20blue%20lines%20on%20white%2C%20minimal%20scientific%20diagram&image_size=landscape_4_3" alt="" />
+        <img src="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=abstract%20Calabi-Yau%20manifold%20projection%2C%20blue%20and%20violet%20gradient%20on%20white%2C%20minimal%20scientific%20illustration&image_size=landscape_4_3" alt="" />
+        <img src="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=abstract%20quantum%20field%20theory%20Feynman%20diagram%20and%20lattice%2C%20thin%20dark%20lines%20on%20white%2C%20minimal%20scientific%20illustration&image_size=landscape_4_3" alt="" />
+        <img src="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=abstract%20Lie%20group%20and%20gauge%20symmetry%20illustration%2C%20thin%20dark%20lines%20on%20white%2C%20minimal%20scientific%20diagram&image_size=landscape_4_3" alt="" />
+      </div>
+
+      <hr />
+
+      <!-- ================= 自我介绍 ================= -->
+      <!-- ★5 这段正文换成你自己的介绍，可以随意加长 -->
+      <p>
+        Welcome to my homepage!
+
+        I am a student/researcher in theoretical physics, focusing on the
+        <i>mathematical structures that underpin quantum theory</i> and their
+        manifestations in quantum field theory and quantum phases of matter.
+
+        My recent interests center on <i>Lie algebras and representation theory</i>,
+        <i>gauge symmetries</i> (e.g. SU(3)), and <i>topological field theories</i>
+        and their lattice realizations.
+
+        I am also broadly interested in the interplay between physics and machine
+        learning, especially <i>physics-informed learning</i> and neural operators.
+
+        <br />
+
+        <!-- ★6 公式墙：$$ ... $$ 会渲染成居中公式，随便增删 -->
+        <span class="mathwall">
+          $$ \operatorname{Lie}: [X, Y] = -\,[Y, X], \qquad [X,[Y,Z]] + [Y,[Z,X]] + [Z,[X,Y]] = 0 $$
+          $$ \operatorname{Gauge}: \partial_\mu \to D_\mu = \partial_\mu - i g A_\mu^a T^a $$
+          $$ \operatorname{TQFT}: \mathsf{Cob}_{d+1} \to \mathsf{Hilb} $$
+          $$ \operatorname{Path integral}: Z = \int \mathcal{D}\phi \; e^{\,i S[\phi] / \hbar} $$
+          $$ \operatorname{index}(D) = \int_{T^*M} \operatorname{Ch}(\psi(\sigma_H(D))) \wedge \operatorname{Td}(M) $$
+        </span>
+
+        For more details, please refer to my
+        <a href="#">research page</a> and <a href="#">publication page</a>.
+        If you are interested in these topics, feel free to contact me via email.
+      </p>
+
+      <!-- ================= 名言 ================= -->
+      <blockquote>
+        “Silence is the language of God, all else is poor translation.”
+        <footer>— Rumi</footer>
+      </blockquote>
+
+      <p>
+        Beyond research, I enjoy reading, traveling and writing.
+        Feel free to reach out via email if you want to discuss anything.
+      </p>
+
+      <hr />
+
+      <!-- ================= 资源区 ================= -->
+      <h2><i class="fa-brands fa-connectdevelop"></i> Some Resources</h2>
+      <ul>
+        <li>
+          <a href="#"><button>Useful Link 1</button></a>
+          : 一句话说明这个资源是干什么的。
+        </li>
+        <li>
+          <a href="#"><button>Useful Link 2</button></a>
+          : 一句话说明这个资源是干什么的。
+        </li>
+      </ul>
+
+      <hr />
+
+      <!-- ================= 最新动态 ================= -->
+      <h2><i class="fa fa-rss-square"></i> Latest news</h2>
+      <ul>
+        <li>2026/11/20 | 第一条动态：例如参加了某会议、论文被接收。</li>
+        <li>2026/10/01 | 第二条动态。</li>
+        <li>2026/09/01 | 第三条动态。</li>
+      </ul>
+
+    </div>
+  </div>
+
+  <!-- ================= 页脚 ================= -->
+  <div class="site-footer">
+    <div class="container">
+      © <span id="year">2026</span> Your Name · Built with GitHub Pages
+    </div>
+  </div>
+
+  <!-- 打字机效果 -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    /* ★3 打字机文案：想展示什么就改这个数组 */
+    new Typed('#typed', {
+      strings: [
+        'quantum field theory',
+        'Lie algebras and representation theory',
+        'SU(3) and gauge symmetry',
+        'topological phases of matter',
+        'physics-informed machine learning'
+      ],
+      typeSpeed: 55,
+      backSpeed: 28,
+      backDelay: 1400,
+      loop: true
+    });
+  </script>
+
+</body>
+</html>
